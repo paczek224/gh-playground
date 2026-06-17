@@ -23,4 +23,5 @@ jobs:
     steps:
       - run: echo "🎉 In the second job, the ${{ github.actor }} actor is ${{ github.actor }}."
       - name: check files again
-        run: ls
+        run: |
+          ls ${{ github.workspace }}
