@@ -16,3 +16,8 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+
+  Explore-GitHub-Actions-second-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 In the second job, the ${{ github.actor }} actor is ${{ github.actor }}."
