@@ -1,6 +1,6 @@
 name: "Learn GitHub Actions"
 run-name: "The second lesson of the Github Actions workflow course"
-on: [push]
+on: [push, push, pull_request]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
