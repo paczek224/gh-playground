@@ -19,5 +19,17 @@ jobs:
 
   Explore-GitHub-Actions-second-job:
     runs-on: ubuntu-latest
+
     steps:
-      - run: echo "🎉 In the second job, the ${{ github.actor }} actor is ${{ github.actor }}."
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+          cache: maven
+
+      - name: compile
+        run: mvn compile
+
+      - name: check files again
+        run: ls
