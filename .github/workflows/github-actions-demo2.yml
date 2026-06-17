@@ -1,17 +1,12 @@
 name: "Learn GitHub Actions"
 run-name: "The second lesson of the Github Actions workflow course"
 on: [push, push, pull_request]
-defaults:
-  run:
-    shell: working-directory
+concurrency: my-workflow
 env:
   MY_NAME: "Łukasz"
   AGE: 35
 jobs:
   check-bats-version:
-    defaults:
-      run:
-        shell: bash
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
