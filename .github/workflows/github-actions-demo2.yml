@@ -3,7 +3,7 @@ run-name: "The second lesson of the Github Actions workflow course"
 on: [push, push, pull_request]
 defaults:
   run:
-    shell: bash
+    shell: working-directory
 env:
   MY_NAME: "Łukasz"
   AGE: 35
@@ -11,7 +11,7 @@ jobs:
   check-bats-version:
     defaults:
       run:
-        shell: working-directory
+        shell: bash
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
