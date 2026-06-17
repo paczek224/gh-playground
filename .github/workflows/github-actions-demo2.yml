@@ -1,6 +1,9 @@
 name: "Learn GitHub Actions"
 run-name: "The second lesson of the Github Actions workflow course"
 on: [push, push, pull_request]
+env:
+  MY_NAME: "Łukasz"
+  AGE: 35
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
@@ -11,3 +14,4 @@ jobs:
           node-version: '24'
       - run: npm install -g bats
       - run: bats -v
+      - run: echo "Hello ${{ env.MY_NAME }} and you are ${{ env.AGE }} years old"
